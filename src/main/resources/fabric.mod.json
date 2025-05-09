@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "dset",
+  "version": "${version}",
+  "name": "DSET",
+  "description": "Duper's Brewing QoL mod",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/dset/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.duperknight.client.DsetClient"
+    ],
+    "main": [
+      "com.duperknight.Dset"
+    ]
+  },
+  "mixins": [
+    "dset.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
