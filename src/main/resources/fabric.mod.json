@@ -17,9 +17,6 @@
       "com.duperknight.Dspt"
     ]
   },
-  "mixins": [
-    "dspt.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=1.16.10",
     "fabric": "*",
