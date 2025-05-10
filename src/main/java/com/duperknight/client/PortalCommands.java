@@ -53,7 +53,7 @@ public class PortalCommands {
                                                                                 ConfigManager.setXDestine(DoubleArgumentType.getDouble(ctx, "xDestine"));
                                                                                 ConfigManager.setYDestine(DoubleArgumentType.getDouble(ctx, "yDestine"));
                                                                                 ConfigManager.setZDestine(DoubleArgumentType.getDouble(ctx, "zDestine"));
-                                                                                ConfigManager.saveConfig(); // Save new destination from portal command
+                                                                                ConfigManager.saveConfig();
                                                                                 expireTime = (long) (DoubleArgumentType.getDouble(ctx, "expireTime") * 1000);
                                                                                 portalActive = true;
 
@@ -107,7 +107,7 @@ public class PortalCommands {
                         xPortal = portalCenter.x;
                         yPortal = portalCenter.y;
                         zPortal = portalCenter.z;
-                        expireTime = 3000; // ms
+                        expireTime = 3000;
                         portalActive = true;
 
                         Vec3d lookHoriz = new Vec3d(lookDir.x, 0, lookDir.z).normalize();

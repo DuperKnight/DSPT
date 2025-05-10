@@ -22,7 +22,6 @@ public class ConfigManager {
                 yDestine = Double.parseDouble(configProps.getProperty("yDestine", "0"));
                 zDestine = Double.parseDouble(configProps.getProperty("zDestine", "0"));
             } else {
-                // Initialize with default values if config file doesn't exist
                 xDestine = 0;
                 yDestine = 0;
                 zDestine = 0;
@@ -30,7 +29,6 @@ public class ConfigManager {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            // Initialize with default values in case of an error
             xDestine = 0;
             yDestine = 0;
             zDestine = 0;
