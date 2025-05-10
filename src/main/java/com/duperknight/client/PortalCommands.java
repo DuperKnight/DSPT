@@ -94,7 +94,7 @@ public class PortalCommands {
                                                                                 }, expireTime);
 
                                                                                 return 1;
-                                                                            }))))))))); // Note: This line might also have an incorrect number of parentheses, but was not part of the reported error.
+                                                                            })))))))));
 
             dispatcher.register(literal("qportal")
                     .executes(ctx -> {
@@ -153,7 +153,7 @@ public class PortalCommands {
                                                 ConfigManager.setZDestine(DoubleArgumentType.getDouble(ctx, "z"));
                                                 ConfigManager.saveConfig();
                                                 MinecraftClient.getInstance().player.sendMessage(
-                                                        Text.of(String.format("qportal destination set to %.2f, %.2f, %.2f",
+                                                        Text.of(String.format("quick portal destination set to %.2f, %.2f, %.2f",
                                                                 ConfigManager.getXDestine(), ConfigManager.getYDestine(), ConfigManager.getZDestine())), false);
                                                 return 1;
                                             })))));

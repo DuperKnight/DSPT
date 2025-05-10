@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "dset",
+  "id": "dspt",
   "version": "${version}",
-  "name": "DSET",
-  "description": "Duper's Brewing QoL mod",
+  "name": "DSPT",
+  "description": "Duper's Stoneworks Portals Tool",
   "authors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/dset/icon.png",
+  "icon": "assets/dspt/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.duperknight.client.DsetClient"
+      "com.duperknight.client.DsptClient"
     ],
     "main": [
-      "com.duperknight.Dset"
+      "com.duperknight.Dspt"
     ]
   },
   "mixins": [
-    "dset.mixins.json"
+    "dspt.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=1.16.10",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.20"
   }
 }
