@@ -10,7 +10,6 @@ The mod introduces the following commands:
     *   Creates a portal at the specified `(xPortal, yPortal, zPortal)` coordinates.
     *   Sets the portal's destination to `(xDestine, yDestine, zDestine)`.
     *   The portal will be active for `expireTime` seconds.
-    *   This command also updates the destination for `/qportal`.
 
 *   `/qportal`
     *   Creates a "quick" portal 3 blocks in front of the player.
