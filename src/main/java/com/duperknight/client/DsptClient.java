@@ -2,6 +2,7 @@ package com.duperknight.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Box;
@@ -11,6 +12,8 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.duperknight.client.UpdateChecker;
+
 public class DsptClient implements ClientModInitializer {
     private static final Map<UUID, Long> playerTeleportCooldowns = new ConcurrentHashMap<>();
     private static final long TELEPORT_COOLDOWN_MS = 2000;
@@ -19,6 +22,11 @@ public class DsptClient implements ClientModInitializer {
     public void onInitializeClient() {
         ConfigManager.loadConfig();
         PortalCommands.register();
+
+        // on world join, check for updates
+        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            UpdateChecker.checkForUpdates();
+        });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (PortalCommands.isPortalActive() && client.player != null && client.world != null) {
